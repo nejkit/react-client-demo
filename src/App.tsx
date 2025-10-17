@@ -3,17 +3,16 @@ import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { RegistrationForm } from "./components/registrationForm";
 import { Home } from "./components/Home";
-import { withSessionTracking } from "./decorators/withUserHowerActivity";
 import {UserActivityPage} from "./components/UserActivityPage.tsx";
 import {AllUsersActivityPage} from "./components/AllUsersActiivtyPage.tsx";
 
-@withSessionTracking("userSession")
 export class App extends React.Component {
     render() {
         return (
             <BrowserRouter>
                 <Routes>
                     {/* Страница регистрации */}
+
                     <Route path="/register" element={<RegistrationForm />} />
 
                     {/* Домашняя страница */}

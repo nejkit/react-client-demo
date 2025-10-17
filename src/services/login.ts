@@ -1,6 +1,6 @@
 import type {RegisterUserRequestDto, RegisterUserResponseDto} from "../types/users.ts";
 
-const BASE_API_PATH = 'http://localhost:1025/api/v1/users'
+const BASE_API_PATH = `${import.meta.env.VITE_API_URL}/api/v1/users`
 
 export const register = async (request: RegisterUserRequestDto) => {
     try {
