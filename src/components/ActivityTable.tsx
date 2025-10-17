@@ -1,5 +1,5 @@
 import React from "react";
-import type {UserActivityEventDto} from "../types/activity.ts";
+import type { UserActivityEventDto } from "../types/activity.ts";
 
 interface ActivityTableProps {
     activities: UserActivityEventDto[];
@@ -10,7 +10,7 @@ export class ActivityTable extends React.Component<ActivityTableProps> {
         const { activities } = this.props;
 
         if (!activities.length)
-            return <p style={{ opacity: 0.6 }}>Нет данных для отображения</p>;
+            return <p style={{ opacity: 0.6 }}>Немає даних для відображення</p>;
 
         return (
             <table
@@ -25,13 +25,13 @@ export class ActivityTable extends React.Component<ActivityTableProps> {
                 <thead>
                 <tr style={{ background: "#3a3a3a" }}>
                     <th style={{ padding: "10px" }}>Дата</th>
-                    <th style={{ padding: "10px" }}>Action</th>
-                    <th style={{ padding: "10px" }}>Metadata</th>
+                    <th style={{ padding: "10px" }}>Дія</th>
+                    <th style={{ padding: "10px" }}>Дані</th>
                 </tr>
                 </thead>
                 <tbody>
-                {activities.map((a) => (
-                    <tr>
+                {activities.map((a, i) => (
+                    <tr key={i}>
                         <td style={{ padding: "10px", borderBottom: "1px solid #444" }}>
                             {a.actionDate}
                         </td>
