@@ -6,7 +6,9 @@ RUN npm install
 
 COPY . .
 
-ENV VITE_API_URL=http://localhost:1025
+ARG VITE_API_URL
+ENV VITE_API_URL=$VITE_API_URL
+
 RUN npm run build
 
 FROM node:20-alpine AS runner
