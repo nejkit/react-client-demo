@@ -12,8 +12,11 @@ npm install
 ```
 
 ### Start dev
+
+Create .env.local with VITE_API_URL=http://localhost:${serverPort}
+
 ```bash
-npm dev
+npm dev 
 ```
 
 ### Docker build
